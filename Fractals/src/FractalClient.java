@@ -18,7 +18,6 @@ public class FractalClient  extends JApplet{
 	private static int[] _snowFractal = {13,12,18,20,23,15,21};
 	
 	public static void main(String[] args) {		
-		 
 		 run();
 	}
 	public static void run(){
