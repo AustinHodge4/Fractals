@@ -1,3 +1,6 @@
+/**
+ * @author Austin Hodge
+ */
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -17,7 +20,7 @@ public class FractalTree extends JFrame {
 	private static float _scale = 1.0f;
 	private static Color[] colors = {Color.RED, Color.BLUE, Color.BLUE, Color.BLACK, Color.DARK_GRAY, Color.GREEN, Color.BLUE, Color.MAGENTA};
 	private static Color leftColor, rightColor;
-	private static int _colorIndex;
+	
 	// params { depth(density), angle(branch), length(height), Color index } 
 	public FractalTree(int[] params){
 		super("Fractal Tree");
@@ -63,7 +66,7 @@ public class FractalTree extends JFrame {
 //		}
 //		else
 //		{
-		// Switch colors at each depth level
+		// Switch colors at every other depth level
 		if(depth % 2 == 0)
 			g2.setColor(leftColor);
 		else
