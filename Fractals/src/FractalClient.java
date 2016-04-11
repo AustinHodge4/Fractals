@@ -42,10 +42,12 @@ public class FractalClient  extends JApplet{
 		{
 			if(_output[0] == _treeFractal[i])
 			{
+				// Draw Trees
 				new FractalTree(_output).setVisible(true);
 			}
 			else if(_output[0] == _squareFractal[i])
 			{
+				// Draw Squares
 				new FractalSquare(_output).setVisible(true);
 			}
 		}
@@ -54,9 +56,11 @@ public class FractalClient  extends JApplet{
 			if(_output[0] == _snowFractal[j])
 			{
 				// Draw Snow
+				new SnowFlake(_output).setVisible(true);
 			}
 			else if(_output[0] == _circleFractal[j])
 			{
+				// Draw Circles
 				new Circle(_output).setVisible(true);
 			}
 		}

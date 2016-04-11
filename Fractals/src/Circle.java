@@ -1,3 +1,6 @@
+/**
+ * @author Leah Cooper
+ */
 import java.awt.*;
 import javax.swing.JFrame;
 
