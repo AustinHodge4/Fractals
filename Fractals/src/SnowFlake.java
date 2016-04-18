@@ -3,7 +3,6 @@
 
 import java.awt.*;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 
 @SuppressWarnings("serial")
@@ -44,10 +43,12 @@ public class SnowFlake extends JFrame
 		 n4 = startNum[3];
 		 
 		
-	     JPanel jp = new JPanel();
-	     jp.setBackground(Color.BLACK);
-	     add(jp);				 
-		 setVisible(true);		 
+//	     JPanel jp = new JPanel();
+//	     jp.setBackground(Color.BLACK);
+//	     
+//	     add(jp);				 
+		 setVisible(true);		
+		 setBackground(Color.BLACK);
 		 setSize(800, 600);
 		 
 
