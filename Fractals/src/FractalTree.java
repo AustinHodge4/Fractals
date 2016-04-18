@@ -25,7 +25,7 @@ public class FractalTree extends JFrame {
 	public FractalTree(int[] params){
 		super("Fractal Tree");
 		setBounds(0, 0, 800, 700);
-		setResizable(false);
+		setResizable(true);
 	    setDefaultCloseOperation(EXIT_ON_CLOSE);
 	    
 		_depth = clamp(params[0], 13, 15);
@@ -106,12 +106,12 @@ public class FractalTree extends JFrame {
         Graphics2D g2 = (Graphics2D)g;
 		g2.setStroke(new BasicStroke(2));
       // drawTree(Graphics, StartPoint, StartLength, Angle (-90 is facing up), Complexity(max 16), ColorSplit(Should be 1 < complexity), Scale, True(used for split));
-        drawTree(g2, new Point2D.Double(400, 600), _length*2, -90, _depth, _depth-1, _scale, true);
+        drawTree(g2, new Point2D.Double(400, 400), _length*2, -90, _depth, _depth-1, _scale, true);
         if(_angleRange % 2 == 0 && _length > 13){
         	//g2.scale(0.8f, 0.8f);
-        	drawTree(g2, new Point2D.Double(400, 600), (int) (_length*2), 0, _depth, _depth-1, _scale, true);
-        	drawTree(g2, new Point2D.Double(400, 600), (int) (_length*2), 180, _depth, _depth-1, _scale, true);
-        	drawTree(g2, new Point2D.Double(400, 600), (int) (_length*2), 90, _depth, _depth-1, _scale, true);
+        	drawTree(g2, new Point2D.Double(400, 400), (int) (_length*2), 0, _depth, _depth-1, _scale, true);
+        	drawTree(g2, new Point2D.Double(400, 400), (int) (_length*2), 180, _depth, _depth-1, _scale, true);
+        	drawTree(g2, new Point2D.Double(400, 400), (int) (_length*2), 90, _depth, _depth-1, _scale, true);
         }
         if(_angleRange % 2 == 0 && _length < 13){
         	drawTree(g2, new Point2D.Double(650, 600), _length*2, -90, _depth, _depth-1, _scale, true);
