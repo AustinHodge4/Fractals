@@ -1,29 +1,41 @@
+/*
+ * This class will generate a 4 element array based off of
+ * letters.
+ * 
+ */
 import javax.swing.*;
 
 @SuppressWarnings("serial")
 public class FractalClient  extends JApplet{
-
-	private static String _name;
+	/* Cool names to try: nick, zach, nicole, chris, frank,
+						  adam, phil, heca, lizzie, west, lance
+	*/
+	private static String _name = "";
 	private static int[] _output = new int[4];
 	
-	// d e n j q z *nick, zach, nicole
+	// d e n j q z
 	private static int[] _treeFractal = {10,5,4,14,26,17};
-	// x i f g k c v chris, frank
+	// x i f g k c v 
 	private static int[] _circleFractal = {3,11,7,9,22,6,24};
-	// a y p s h b *adam phil heca
+	// a y p s h b
 	private static int[] _squareFractal = {1,19,2,8,16,25};
-	// w r t u o l m lizzie west lance
+	// w r t u o l m
 	private static int[] _snowFractal = {13,12,18,20,23,15,21};
 	
-	public static void main(String[] args) {		
-		 run();
+	public static void main(String[] args) {
+		while(true){
+			try{
+				_name = JOptionPane.showInputDialog("Enter Name: ");
+				computeName();
+				selectFractal();
+			}
+			catch(Exception e){
+				System.out.println(e.getMessage());
+				System.exit(0);
+			}
+		}
 	}
-	public static void run(){
-		_name = JOptionPane.showInputDialog
-                ("Enter Name: ");
-	 computeName();
-	 selectFractal();
-	}
+
 	public static void computeName(){
 		for(int i = 0; i < 4; i++){
 			char c = _name.charAt(i);
@@ -31,8 +43,6 @@ public class FractalClient  extends JApplet{
 			a -= 9;
 			_output[i] = a;
 		}
-		//System.out.println("Debug: " + Arrays.toString(_output));
-
 	}
 	public static void selectFractal()
 	{
@@ -48,20 +58,20 @@ public class FractalClient  extends JApplet{
 				// Draw Squares
 				new FractalSquare(_output).setVisible(true);
 			}
-		}
-		for(int j = 0; j < 7; j++)
-		{
-			if(_output[0] == _snowFractal[j])
+			
+			if(i < 7)
 			{
-				// Draw Snow
-				new SnowFlake(_output).setVisible(true);
-			}
-			else if(_output[0] == _circleFractal[j])
-			{
-				// Draw Circles
-				new Circle(_output).setVisible(true);
+				if(_output[0] == _snowFractal[i])
+				{
+					// Draw Snow Flake
+					new SnowFlake(_output).setVisible(true);
+				}
+				else if(_output[0] == _circleFractal[i])
+				{
+					// Draw Circles
+					new Circle(_output).setVisible(true);
+				}
 			}
 		}
-		run();
 	}
 }
